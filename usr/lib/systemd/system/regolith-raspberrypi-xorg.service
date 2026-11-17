@@ -1,0 +1,11 @@
+[Unit]
+Description=Choose the Raspberry Pi display device for Xorg
+After=systemd-udev-trigger.service
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/regolith-system-ubuntu/raspberrypi-xorg-config
+
+[Install]
+WantedBy=multi-user.target
